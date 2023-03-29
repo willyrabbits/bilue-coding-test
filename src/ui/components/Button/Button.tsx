@@ -2,18 +2,23 @@ import React from "react";
 
 import $ from "./Button.module.css";
 
+interface PropsIf {
+  children: React.ReactNode,
+  onClick?: () => {},
+  type?: "button" | "submit" | "reset"
+  variant?: string
+  disabled?: boolean
+}
+
 const Button = ({
   children,
   onClick,
   type = "button",
   variant = "primary", // or 'secondary'
-}) => {
+}: PropsIf) => {
   return (
     <button
-      // TODO: Add conditional classNames
-      // - Must have a condition to set the '.primary' className
-      // - Must have a condition to set the '.secondary' className
-      className={$.button}
+      className={`${$.button} ${variant === 'secondary' ? $.secondary : $.primary}`}
       type={type}
       onClick={onClick}
     >

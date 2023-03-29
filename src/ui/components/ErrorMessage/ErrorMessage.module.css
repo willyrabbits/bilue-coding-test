@@ -1,0 +1,6 @@
+.error {
+    padding: 1rem;
+    color: var(--color-error);
+    font-style: italic;
+    font-size: small;
+}
